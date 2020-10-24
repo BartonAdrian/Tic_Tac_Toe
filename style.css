@@ -1,0 +1,291 @@
+html {
+    background-image: linear-gradient(#615dad, #ffc8da);
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .obsah {
+    position: relative;
+    align-items: center;
+    top: 30px;
+    left: 50px;
+    color: #ffffff;
+    background-color: #283e50;
+    border-radius: 3%;
+    height: 700px;
+    width: 480px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    display:flex;
+    flex-direction: column;
+    flex-basis: 1 1 1;
+  }
+  .obrazek {
+    height: 45%;
+    width: 100%;
+    top:0;
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+  }
+  
+  .text {
+    order:1;
+    text-align: center;
+    height: 350px;
+  }
+  
+  .tlacitka{
+    list-style: none;
+    order:2;
+    width: 100%;
+    margin-left: -40px;
+  }
+  
+  .tlacitka a{
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    display:block;
+    font-size: 1em;
+  }
+  
+  .pravidlahl a {
+    height: 40px;
+    background-color:#1fcca4;
+  }
+  .pravidlahl a:hover {
+    background-color:#1cbb96;
+  }
+  
+  .zacithrat a {
+    border-top: 2px solid #3f464d;
+    height: 40px;
+    background-color:#0197f6;
+  }
+  .zacithrat a:hover {
+    background-color: #0090e9;
+  }
+  
+  h1 {
+    font-size: 3em;
+    font-family: 'Lobster';
+  }
+  
+  p {
+    font-size:1.3em;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  /*--------stránka pravidla---------------*/
+  
+  .pravidla {
+    list-style-type: decimal;
+  }
+  
+  .kontejner {
+    background-color: #283e50;
+    color:whitesmoke;
+    max-width: 70%;
+    border-radius: 7px 7px 0 0;
+    font-size:16px;
+    position:relative;
+    left: 80px;
+    margin:10px;
+  }
+  .nadpis{
+    align-self:center;
+    font-style:italic;
+    text-align: center;
+    padding-top: 20px;
+    margin:10px;
+  }
+  
+  .tlacitka1{
+    width: 100%;
+    margin-left: -40px;
+  }
+  
+  .tlacitka1 a{
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    display:block;
+    font-size: 1em;
+    padding:15px;
+  }
+  
+  .uvodnistr a {
+    height: 40px;
+    background-color:#1fcca4;
+  }
+  .uvodnistr a:hover {
+    background-color:#1cbb96;
+  }
+  
+  .zacithrat a {
+    border-top: 2px solid #3f464d;
+    height: 40px;
+    background-color:#0197f6;
+  }
+  .zacithrat a:hover {
+    background-color: #0090e9;
+  }
+  .pis{
+  width: 100%;
+  }
+  
+  .kolecko, .krizek {
+    filter: invert(100%);
+    width: 1em;
+    height: 1em;
+  }
+  ol li {
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+  .kontejner p{
+    font-size: 16px;
+  }
+  ul{
+    list-style: none;
+  }
+  figcaption{
+    padding:5px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 600px)
+  {
+    .flexy{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:space-evenly;
+    }
+  
+    .o1,.o2,.o3,.o4,.o5,.o6{
+  display:flex;
+  flex-direction: column;
+  flex-basis: 45%;
+  align-items: center;
+    }
+    figcaption{
+      font-size:15px;
+    }
+  }
+  
+  @media screen and (min-width: 2000px)
+  {.kontejner{
+    max-width:80%;
+  }
+  }
+  /* --------- část Hra -------------- */
+  .hrabody {
+    display: flex;
+    justify-content: center;
+    color:whitesmoke;
+  }
+  .hl_obsah {
+    max-width: 80vmin;
+  }
+  h1
+  {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button {
+    border: 1px solid black;
+    width:8vmin;
+    height:8vmin;
+    background-color: whitesmoke;
+    opacity: 0.4;
+  }
+  
+  .hraci_policka {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 1px 1px #6965bb;
+  }
+  
+  button:focus,
+  button:hover {
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 229, 229, 0.7),
+      rgba(245, 229, 229, 0.7)
+    );
+  }
+  
+  .hra {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .domecek {
+    background-color: #1fcca4;
+    margin-bottom: 1.5px;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    padding:5px;
+  }
+  
+  .zahlavi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .domecek a:focus,
+  .domecek a:hover {
+    background-color: #1cbb96;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .restart a:focus,
+  .restart a:hover {
+    background-color: #0090e9;
+    width: 100%;
+    border-radius: 10px;
+    padding:10px;
+  }
+  
+  .restart {
+    border-radius: 10px;
+    padding: 1px 6px;
+    margin-right: -3px;
+  }
+  
+  .buttony {
+    position: relative;
+    padding: 2px 7px;
+  }
+  
+  /*--------- javascript --------- */
+  
+  .inkonka{
+    color: white;
+  
+  }
+  
+  .board__field--circle {
+    background-image: url(obrazek/circle.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;}
+  
+  
+    .board__field--cross {
+      background-image: url(obrazek/cross.svg);
+      background-repeat: no-repeat;
+    background-size:2rem;
+  }
