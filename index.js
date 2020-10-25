@@ -21,7 +21,7 @@ for (let i = 0; i < tlacitko.length; i++) {
                 tlacitko[i].style.backgroundRepeat = "no-repeat";
                 tlacitko[i].style.backgroundSize = "40px 40px";
                 tlacitko[i].style.backgroundPosition = "center";
-                tlacitko[i].setAttribute("alt", "Cross");
+                tlacitko[i].setAttribute("alt", "Circle");
                 event.target.setAttribute('disabled', true);
                 natahu = 'cross';
                 chceckWin();
@@ -34,7 +34,7 @@ for (let i = 0; i < tlacitko.length; i++) {
                 tlacitko[i].style.backgroundRepeat = "no-repeat";
                 tlacitko[i].style.backgroundSize = "40px 40px";
                 tlacitko[i].style.backgroundPosition = "center";
-                tlacitko[i].setAttribute("alt", "Circle");
+                tlacitko[i].setAttribute("alt", "Cross");
                 event.target.setAttribute('disabled', true);
                 natahu = 'circle';
                 chceckWin();
@@ -62,7 +62,7 @@ function rowWin(index) {
         }
     }
     if (pocet === bingo) {
-        gameOver();
+        gameOver(znak);
     }
 }
 
@@ -75,7 +75,7 @@ function columnWin(index) {
         }
     }
     if (pocet === bingo) {
-        gameOver();
+        gameOver(znak);
     }
 }
 
@@ -95,10 +95,11 @@ function awryWin(index) {
         }
     }
     if (pocet === bingo) {
-        gameOver();
+        gameOver(znak);
     }
 }
 
-function gameOver() {
-    alert("Konec hry");
+function gameOver(winner) {
+    alert("Konec hry, vyhrál " + winner);
+    location.reload();
 }
