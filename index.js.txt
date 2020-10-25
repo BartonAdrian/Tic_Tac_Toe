@@ -1,0 +1,104 @@
+'use strict';
+
+//Game properties
+let natahu = 'circle';
+let hraje = document.querySelector('.hra');
+let tlacitko = document.querySelectorAll('button');
+
+//pravidla 
+const win=5;
+
+for (let i = 0; i < tlacitko.length; i++) {
+  tlacitko[i].addEventListener('click', (event) => {
+
+    switch(natahu){
+      case 'circle' : 
+        event.target.classList.toggle('board_field--circle');
+        hraje.innerHTML = `hraje:
+        <img class="ikonka" src="obrazek/cross.svg" alt="křížek" />`;
+        tlacitko[i].style.backgroundImage = "url('obrazek/circle.svg')";
+        tlacitko[i].style.backgroundRepeat = "no-repeat";
+        tlacitko[i].style.backgroundSize = "90px 90px";
+        tlacitko[i].style.backgroundPosition = "center";
+        event.target.setAttribute('disabled', true);
+        natahu = 'cross';
+        checkWin();  
+        break;
+      case 'cross':
+        event.target.classList.toggle('board_field--cross');
+        hraje.innerHTML = ` hraje:
+        <img class="ikonka" src="obrazek/circle.svg" alt="kolečko" />`;
+        tlacitko[i].style.backgroundImage = "url('obrazek/cross.svg')";
+        tlacitko[i].style.backgroundRepeat = "no-repeat";
+        tlacitko[i].style.backgroundSize = "90px 90px";
+        tlacitko[i].style.backgroundPosition = "center";
+        event.target.setAttribute('disabled', true);
+        natahu = 'circle';
+        checkWin();   
+        break;
+    }
+  });}
+
+    function checkWin(){
+      for(let i=0;i < tlacitko.length;i++ ){
+        if(tlacitko[i].getAttribute("class") !== null){
+            rowWin(i);
+            //collumWin(i);
+            //askewWin(i);
+        }
+      }
+    }
+
+    function rowWin(index){
+      var znak=tlacitko[index].getAttribute("class") ;
+      let pocet=1;
+      for(let i=1;i <=win;i++){
+        if(znak === tlacitko[index+i].getAttribute("class") ){
+          pocet++;
+        }
+      }
+
+      if(pocet===win){
+        gameOver();
+      }
+    }
+
+    function collumWin(index){
+      const znak=tlacitko[index].getAttribute("class");
+      let pocet=1;
+      for(let i=1;i < win;i+=10){
+        if(znak===tlacitko[i].getAttribute("class")){
+          pocet++;
+        }
+      }
+      if(pocet===win){
+        gameOver();
+      }
+    }
+
+    function askewWin(index){
+      //zjisteni pozadi
+      const znak=tlacitko[index].className;
+      let pocet=1;
+      //right-down
+      for(let i=1;i < win;i+=10){
+        if(znak===tlacitko[index+i].className){
+          
+        }
+      }
+      //left-down
+      for(let i=1;i < win;i+=8){
+        if(znak===tlacitko[i].className){
+          
+        } 
+      }
+    }
+
+    function gameOver(){
+      for (let i = 0; i < tlacitko.length; i++) {
+        tlacitko[i].addEventListener('click', (event) => {
+            event.target.setAttribute('disabled', true);
+        });
+      }
+      alert('Konec hry');
+    }
